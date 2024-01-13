@@ -4,13 +4,16 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -24,7 +27,7 @@ public class Persona
     @Column(name="id")
     private Long id;
 
-    @Column(name= "Codice_fiscale")
+    @Column(name= "codice_fiscale")
     private String codicefiscale;
  
     @Column(name= "nome")
@@ -46,5 +49,11 @@ public class Persona
     @ManyToOne
     @JoinColumn(name="id_status")
     private Stato statusPersona ;
+
+     @OneToOne(mappedBy = "idPersona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Operatore_Attivo idOperatoreAttivo;
+
+    @OneToOne(mappedBy = "idPersona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Operatore_Telefonico idOperatoreTelefonico;
     
 }
