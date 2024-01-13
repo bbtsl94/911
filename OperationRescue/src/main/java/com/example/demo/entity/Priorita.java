@@ -23,13 +23,13 @@ public class Priorita
     @Column(name="id")
     private Long id;
 
-    @Column(name= "Tipologia_colore")
+    @Column(name= "tipologia_colore")
     private String tipocolore;
  
-    @Column(name= "Descrizione_emergenza" , length = 2000)
+    @Column(name= "descrizione_emergenza" , length = 2000)
     private String descrizioneEmergenza;
 
-    @Column(name= "Tempistiche")
+    @Column(name= "tempistiche")
     private int tempistiche;
 
     @JsonIgnore

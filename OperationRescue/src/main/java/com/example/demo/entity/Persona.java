@@ -4,10 +4,8 @@ import java.time.LocalDate;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -24,7 +22,6 @@ public class Persona
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
     private Long id;
 
     @Column(name= "codice_fiscale")
@@ -50,10 +47,11 @@ public class Persona
     @JoinColumn(name="id_status")
     private Stato statusPersona ;
 
-     @OneToOne(mappedBy = "idPersona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Operatore_Attivo idOperatoreAttivo;
+    @OneToOne
+    private Operatore_Attivo operatoreAttivo;
+    
 
-    @OneToOne(mappedBy = "idPersona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Operatore_Telefonico idOperatoreTelefonico;
+     @OneToOne
+      private Operatore_Telefonico operatoreTelefonico;
     
 }

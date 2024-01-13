@@ -23,7 +23,7 @@ public class Tipologia_Gestione_Call
     @Column(name="id")
     private Long id;
 
-    @Column(name= "Tipologia")
+    @Column(name= "tipologia")
     private int tipologia;
 
      @JsonIgnore

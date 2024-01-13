@@ -24,7 +24,7 @@ public class Stato
     @Column(name="id")
     private Long id;
 
-    @Column(name= "Aggiornamento")
+    @Column(name= "aggiornamento")
     private String aggiornamento;
 
     @JsonIgnore
