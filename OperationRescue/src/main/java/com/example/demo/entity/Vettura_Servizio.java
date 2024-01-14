@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,10 +31,12 @@ public class Vettura_Servizio
     @Column(name= "data_ora_fine_servizio")
     private LocalDate dataOraFine;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name= "n_personale")
     private Operatore_Attivo numeroPersonale;
  
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name= "n_vettura")
     private Vettura numeroVettura;

@@ -48,8 +48,16 @@ public class Operatore_Attivo
     @OneToMany(mappedBy = "numeroPersonale")
     private List<Vettura_Servizio> idVetturaServizio;
   
+    // @JsonIgnore
+    // @OneToOne
+    // @JoinColumn(name="id_persona")
+    // private Persona id_persona;
+
+    @JsonIgnore
     @OneToOne
+    @JoinColumn(name = "id_persona", referencedColumnName = "id", unique = true)
     private Persona persona;
+
     
    
 }

@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -34,10 +35,12 @@ public class Operatore_Telefonico
     private String sedeLavoro;
 
     @JsonIgnore
+    @ManyToOne
     @JoinColumn(name= "id_tipologia_call")
     private Tipologia_Gestione_Call id_Tipologia_Call;
 
     @JsonIgnore
+    @ManyToOne
     @JoinColumn(name="id_status")
     private Stato statusOPT;
     
@@ -45,8 +48,13 @@ public class Operatore_Telefonico
     @OneToMany(mappedBy = "id_numero_personale")
     private List<Emergenza> id_numero_personale;
 
+    // @JsonIgnore
+    //  @ManyToOne
+    // @JoinColumn(name="id_persona")
+    // private Persona id_persona;
+    @JsonIgnore
     @OneToOne
+    @JoinColumn(name = "id_persona", referencedColumnName = "id", unique = true)
     private Persona persona;
-
 
 }
