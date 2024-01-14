@@ -19,7 +19,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="Operatori_Telefonici")
-public class Operatore_Telefonico 
+public class Operatore_Telefonico  extends GenericEntity
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

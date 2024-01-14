@@ -16,7 +16,7 @@ import lombok.Data;
 @Data
 @Table(name="Stato")
 @Entity
-public class Stato 
+public class Stato  extends GenericEntity
 {
     
     @Id

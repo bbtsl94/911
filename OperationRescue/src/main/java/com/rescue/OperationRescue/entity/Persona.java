@@ -21,7 +21,7 @@ import lombok.Data;
 @Data
 @Table( name="Persone")
 @Entity
-public class Persona 
+public class Persona  extends GenericEntity
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

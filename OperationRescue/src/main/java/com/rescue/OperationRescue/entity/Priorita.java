@@ -16,7 +16,7 @@ import lombok.Data;
 @Entity
 @Data
 @Table(name= "Priorita")
-public class Priorita 
+public class Priorita  extends GenericEntity
 {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

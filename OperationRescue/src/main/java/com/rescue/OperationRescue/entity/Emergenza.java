@@ -15,11 +15,12 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Entity
 @Table(name="Emergenza")
-public class Emergenza 
+public class Emergenza  extends GenericEntity
 {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
