@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.rescue.OperationRescue.entity;
 
 import java.util.List;
 
@@ -15,23 +15,26 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name="Tipologia_Gestione_Call")
-public class Tipologia_Gestione_Call 
+@Table(name= "Priorita")
+public class Priorita 
 {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Long id;
 
-    @Column(name= "tipologia")
-    private int tipologia;
+    @Column(name= "tipologia_colore")
+    private String tipocolore;
+ 
+    @Column(name= "descrizione_emergenza" , length = 2000)
+    private String descrizioneEmergenza;
 
-     @JsonIgnore
-    @OneToMany(mappedBy="id_Tipologia_Call")
-    private List<Operatore_Attivo> idOperatoreAttivo;
+    @Column(name= "tempistiche")
+    private int tempistiche;
 
     @JsonIgnore
-    @OneToMany(mappedBy="id_Tipologia_Call")
-    private List<Operatore_Telefonico> idOperatoreTelefonico;
- 
+    @OneToMany(mappedBy = "id_priorita")
+    private List<Emergenza> id_priorita;
+  
+    
 }

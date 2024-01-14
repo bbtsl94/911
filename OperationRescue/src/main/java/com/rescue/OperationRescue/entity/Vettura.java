@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.rescue.OperationRescue.entity;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
